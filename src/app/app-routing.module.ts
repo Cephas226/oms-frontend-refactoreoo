@@ -5,7 +5,7 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/dashboard',
+        redirectTo: '/auth',
     },
     {
         path: 'charts',
@@ -33,6 +33,16 @@ const routes: Routes = [
         path: 'tables',
         loadChildren: () =>
             import('modules/tables/tables-routing.module').then(m => m.TablesRoutingModule),
+    },
+    {
+        path: 'employees-table',
+        loadChildren: () =>
+            import('@modules/employees-table/contact-tables-routing.module').then(m => m.ContactTablesRoutingModule),
+    },
+    {
+        path: 'student-table',
+        loadChildren: () =>
+            import('modules/student-table/student-tables-routing.module').then(m => m.StudentTablesRoutingModule),
     },
     {
         path: 'version',

@@ -4,6 +4,10 @@
 
 export const environment = {
     production: false,
+    USERS_API: {
+        API_STUDENTS:"http://localhost:3000/students",
+        API_EMPLOYEES: "http://localhost:3000/employees"
+      }
 };
 
 /*
