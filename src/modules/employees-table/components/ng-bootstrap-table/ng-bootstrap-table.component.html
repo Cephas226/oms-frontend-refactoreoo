@@ -1,77 +1,69 @@
 <form>
-    <div class="row">
-        <div class="col-sm-8">
-          <div class="form-group form-inline">
-            <button type="button" class="btn btn-primary">
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
-              Add employees
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="form-group form-inline">
+        <button type="button" class="btn btn-primary">
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+          Add student
+        </button>
+        <button type="button" class="btn btn-secondary">
+          <i class="fa fa-download"></i>
+          Export
+        </button>
+        <button type="button" class="btn btn-success">
+          <i class="fa fa-upload"></i>
+          Import
+        </button>
+        <!-- Example single danger button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-filter" aria-hidden="true"></i>
+              Filter
             </button>
-            <button type="button" class="btn btn-secondary">
-              <i class="fa fa-download"></i>
-              Export
-            </button>
-            <button type="button" class="btn btn-success">
-              <i class="fa fa-upload"></i>
-              Import
-            </button>
-            <!-- Example single danger button -->
-              <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-filter" aria-hidden="true"></i>
-                  Filter
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
-              </div>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
       </div>
-        
-    <!-- <div class="form-group form-inline">Search <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="countryService.searchTerm" /><span class="ml-3" *ngIf="countryService.loading$ | async">Loading...</span></div> -->
+    </div>
+    <div class="col-sm-4">
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
     <table class="table table-striped table-bordered">
-        <thead>
+    <thead class="thead-dark">
             <tr>
                 <th scope="col">Code</th>
                 <th scope="col" sbSortable="name" (sort)="onSort($event)"><span>Name</span><sb-sort-icon *ngIf='sortedColumn === "name"' [direction]="sortedDirection"></sb-sort-icon></th>
-                <th scope="col" sbSortable="area" (sort)="onSort($event)"><span>Fist Name</span><sb-sort-icon *ngIf='sortedColumn === "area"' [direction]="sortedDirection"></sb-sort-icon></th>
-                <th scope="col" sbSortable="population" (sort)="onSort($event)"><span>Email</span><sb-sort-icon *ngIf='sortedColumn === "population"' [direction]="sortedDirection"></sb-sort-icon></th>
-                <th scope="col" sbSortable="population" (sort)="onSort($event)"><span>Phone 1</span><sb-sort-icon *ngIf='sortedColumn === "population"' [direction]="sortedDirection"></sb-sort-icon></th>
-                <th scope="col" sbSortable="population" (sort)="onSort($event)"><span>Phone 2</span><sb-sort-icon *ngIf='sortedColumn === "population"' [direction]="sortedDirection"></sb-sort-icon></th>
-                <th scope="col" sbSortable="population" (sort)="onSort($event)"><span>Action</span><sb-sort-icon *ngIf='sortedColumn === "population"' [direction]="sortedDirection"></sb-sort-icon></th>
+                <th scope="col" sbSortable="name" (sort)="onSort($event)"><span>FistName</span><sb-sort-icon *ngIf='sortedColumn === "name"' [direction]="sortedDirection"></sb-sort-icon></th>
+                <th scope="col" sbSortable="name" (sort)="onSort($event)"><span>Email</span><sb-sort-icon *ngIf='sortedColumn === "name"' [direction]="sortedDirection"></sb-sort-icon></th>
+                <th scope="col" sbSortable="area" (sort)="onSort($event)"><span>Tel 1.</span><sb-sort-icon *ngIf='sortedColumn === "area"' [direction]="sortedDirection"></sb-sort-icon></th>
+                <th scope="col" sbSortable="population" (sort)="onSort($event)"><span>Tel 2.</span><sb-sort-icon *ngIf='sortedColumn === "population"' [direction]="sortedDirection"></sb-sort-icon></th>
+                <th scope="col" sbSortable="population" (sort)="onSort($event)"><span>Actions</span><sb-sort-icon *ngIf='sortedColumn === "population"' [direction]="sortedDirection"></sb-sort-icon></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of allEmployees">
-                <th scope="row">{{ employee.code }}</th>
-                <th scope="row">{{ employee.name }}</th>
-                <th scope="row">{{ employee.fistName }}</th>
-                <th scope="row">{{ employee.email }}</th>
-                <th scope="row">{{ employee.tel1 }}</th>
-                <th scope="row">{{ employee.tel2 }}</th>
-                <!-- <td><img class="mr-2" [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" style="width: 20px" /><ngb-highlight [result]="country.name" [term]="countryService.searchTerm"></ngb-highlight></td>
-                <td><ngb-highlight [result]="country.area | number" [term]="countryService.searchTerm"></ngb-highlight></td>
-                <td><ngb-highlight [result]="country.population | number" [term]="countryService.searchTerm"></ngb-highlight></td> -->
+            <tr *ngFor="let employees of allEmployees">
+                <th scope="row">{{ employees.code }}</th>
+                <th scope="row">{{ employees.name }}</th>
+                <th scope="row">{{ employees.fistName }}</th>
+                <th scope="row">{{ employees.email }}</th>
+                <th scope="row">{{ employees.tel1 }}</th>
+                <th scope="row">{{ employees.tel2 }}</th>
                 <td class="overflow-hidden">
                     <div ngbDropdown container="body">
                       <button class="btn btn-dark btn-sm" ngbDropdownToggle>
                         <i class="fa fa-cog" aria-hidden="true"></i>
+                    
                       </button>
                       <div ngbDropdownMenu>
-                        <button class="btn btn-primary btn-sm" ngbDropdownItem data-toggle="modal" data-target="#exampleModal" (click)="openModal(editProfileModal,user)">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            View</button>
-                            <div class="dropdown-divider"></div>
                         <button class="btn btn-light btn-sm" ngbDropdownItem data-toggle="modal" data-target="#exampleModal" (click)="openModal(editProfileModal,user)">
                           <i class="fa fa-pencil" aria-hidden="true"></i>
                           Edit</button>
@@ -82,7 +74,6 @@
                       </div>
                     </div>
                   </td>
-           
             </tr>
         </tbody>
     </table>

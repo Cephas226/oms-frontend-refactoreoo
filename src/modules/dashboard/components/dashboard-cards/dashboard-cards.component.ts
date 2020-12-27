@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { faUserGraduate, faClock, faStopwatch, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'sb-dashboard-cards',
@@ -7,6 +8,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     styleUrls: ['dashboard-cards.component.scss'],
 })
 export class DashboardCardsComponent implements OnInit {
+    faUserGraduate = faUserGraduate;
+    faClock=faClock;
+    faStopwatch=faStopwatch;
+    faChalkboardTeacher=faChalkboardTeacher
     constructor() {}
     ngOnInit() {}
 }
