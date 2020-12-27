@@ -1,0 +1,43 @@
+{
+  "employees": [
+    { 
+      "id": 1,
+      "code":"ga001",
+      "name": "Cheili",
+      "fistName": "Khaoula",
+      "email":"cheili@gmail.com",
+      "tel1":"0639607953",
+      "tel2":"0639607953"
+  },
+  { 
+    "id": 2,
+    "code":"ga002",
+    "name": "ZOUBGA",
+    "fistName": "Cephas",
+    "email":"zoubga@gmail.com",
+    "tel1":"0639601153",
+    "tel2":"0539601153"
+}
+  ],
+  "students": [
+    { 
+      "id": 1,
+      "code":"st001",
+      "name": "ZARA",
+      "fistName": "Amine",
+      "email":"cheili@gmail.com",
+      "tel":"0639607953",
+      "class":"A1"
+  },
+  { 
+    "id": 2,
+    "code":"st002",
+    "name": "SALIF",
+    "fistName": "Kader",
+    "email":"zoubga@gmail.com",
+    "tel":"0639601153",
+    "class":"A1.1"
+    
+}
+  ]
+}

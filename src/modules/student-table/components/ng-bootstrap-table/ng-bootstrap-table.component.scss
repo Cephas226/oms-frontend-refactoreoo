@@ -1,0 +1,26 @@
+@import 'styles/variables.scss';
+
+thead > tr > th {
+    cursor: pointer;
+}
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #B79F3B;
+}
+
+.btn-danger:hover{
+    color: #fff;
+    background-color: red;
+    border-color:red;
+}
+.btn-light:hover{
+  background-color:yellow;
+  border-color:yellow;
+}
+.btn-primary:hover{
+    background-color:green;
+    border-color:yellow;
+  }
+.btn-success:hover{
+    background-color:green;
+    border-color:yellow;
+  }
